@@ -62,7 +62,7 @@ module.exports.fetchAllrestaurants = async (restaurantsArray, nbPages) => {
 			
       $('.single_desc').each((index, value) => {
 				let url = $(value).find('.single_libel a').attr('href');
-				let name = $(value).find('.single_libel a').text();
+				let name = $(value).find('.single_libel a').text().replace(/\s*\(.*?\)\s*/g, '');
 
 				let restaurant = {
 					name: name,

@@ -16,7 +16,7 @@ async function sandbox() {
 
     let links = [];
     await maitres.fetchAllrestaurants(links, 2)
-    console.log(links)
+    console.log(links) 
 
 
 
