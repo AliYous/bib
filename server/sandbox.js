@@ -1,25 +1,26 @@
 /* eslint-disable no-console, no-process-exit */
+
+
+
+// ------------------------------------- 
+//   ONLY FOR TESTING. RUN app.js for full project
+// ----------------------------------
 const michelin = require('./michelin');
+const maitres = require('./maitres');
+
 const axios = require('axios');
 const fs = require('fs');
 
-async function sandbox () {
+async function sandbox() {
   try {
-    const nbPages = await michelin.getNbPages("https://guide.michelin.com/fr/fr/restaurants/bib-gourmand")
-    const restaurantsUrls = await michelin.fetchRestaurantsUrls(1); 
-    let restaurants = [];
 
-    for (url of restaurantsUrls){
-      console.log("scraping " + url);
-      await michelin.scrapeRestaurant(url, restaurants); 
-    }
+    let links = [];
+    await maitres.fetchAllrestaurants(links, 2)
+    console.log(links)
 
-    console.log(restaurants);
 
-    const json = await JSON.stringify(restaurants, null, 2);
-    fs.writeFileSync('./michelinBib.json', json);
 
-    console.log('done');
+
     process.exit(0);
 
   } catch (e) {
@@ -27,7 +28,6 @@ async function sandbox () {
     process.exit(1);
   }
 }
-
 
 
 sandbox();

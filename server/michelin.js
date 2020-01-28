@@ -1,28 +1,15 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-/**
- * Fills the restaurants Json with all the restaurants data
- * @param  {Array} restaurantsUrls - 
- * @param  {Array} restaurants - //empty at first
- */
-const parse = async(restaurantUrls, restaurants) => {
-
-
-};
-
-
-
-
 
 /**
- * Scrape a given restaurant url
+ * Scrape a given restaurant url and adds it in hash format to the restaurants array 
  * @param  {String}  url
  * @return {Object} restaurant
  */
 module.exports.scrapeRestaurant = async (url, restaurantsArray) => {
   const response = await axios(url);
-  const {data, status} = response; 
+  const { data, status } = response;
 
   if (status >= 200 && status < 300) {
     const $ = cheerio.load(data)
@@ -35,8 +22,8 @@ module.exports.scrapeRestaurant = async (url, restaurantsArray) => {
     const experience = experience_array[experience_array.length - 2] + ' ' + experience_array[experience_array.length - 1];
     const distinction = 'Bib Gourmand';
     let phone = 'Non renseigné';
-    if($('body > main > div.restaurant-details > div.container > div > div.col-xl-8.col-lg-7 > section:nth-child(4) > div.row > div:nth-child(1) > div > div:nth-child(1) > div > div > a').attr("href")) {
-     phone = '+' + $('body > main > div.restaurant-details > div.container > div > div.col-xl-8.col-lg-7 > section:nth-child(4) > div.row > div:nth-child(1) > div > div:nth-child(1) > div > div > a').attr("href").replace(/[^0-9]/g, ''); //we use regex to remove the non digits char
+    if ($('body > main > div.restaurant-details > div.container > div > div.col-xl-8.col-lg-7 > section:nth-child(4) > div.row > div:nth-child(1) > div > div:nth-child(1) > div > div > a').attr("href")) {
+      phone = '+' + $('body > main > div.restaurant-details > div.container > div > div.col-xl-8.col-lg-7 > section:nth-child(4) > div.row > div:nth-child(1) > div > div:nth-child(1) > div > div > a').attr("href").replace(/[^0-9]/g, ''); //we use regex to remove the non digits char
     };
 
 
@@ -59,13 +46,13 @@ module.exports.scrapeRestaurant = async (url, restaurantsArray) => {
 
 module.exports.getNbPages = async (url) => {
   const response = await axios(url);
-  const {data, status} = response; 
+  const { data, status } = response;
   const $ = cheerio.load(data);
 
   const totalRestaurants = $("body > main > section.section-main.search-results.search-listing-result > div > div > div.search-results__count > div.d-flex.align-items-end.search-results__status > div.flex-fill > h1")
-      .text()
-      .trim()
-      .split(" ");
+    .text()
+    .trim()
+    .split(" ");
   const nbPages = Math.ceil(Number(totalRestaurants[totalRestaurants.length - 2]) / 20);
 
   return nbPages
@@ -83,7 +70,7 @@ module.exports.fetchRestaurantsUrls = async (nbPages) => {
   let links = [];
   for (let i = 1; i <= nbPages; i++) {
     const response = await axios(`${url}${i}`);
-    const {data, status} = response; 
+    const { data, status } = response;
 
     if (status >= 200 && status < 300) {
       const $ = cheerio.load(data);
