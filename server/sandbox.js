@@ -4,11 +4,10 @@ const axios = require('axios');
 
 async function sandbox () {
   try {
-    const restaurantsUrls = await michelin.fetchRestaurantsUrls(5);
-    console.log(restaurantsUrls);
-
-  
-
+    const nbPages = await michelin.getNbPages("https://guide.michelin.com/fr/fr/restaurants/bib-gourmand")
+    console.log(nbPages)
+    const restaurantsUrls = await michelin.fetchRestaurantsUrls(nbPages); //Need to get nb of pages through a method
+    console.log(restaurantsUrls)
     console.log('done');
     process.exit(0);
 

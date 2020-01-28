@@ -37,20 +37,26 @@ module.exports.scrapeRestaurant = async url => {
 };
 
 
-
-//Get Nb of Pages that we'll need to fetch data from.
-module.exports.getNbOfPages = data => {
+module.exports.getNbPages = async (url) => {
+  const response = await axios(url);
+  const data = response.data
+  const status = response.status
   const $ = cheerio.load(data);
-  
-  const NbOfItemsInfo = $('body > main > section.section-main.search-results.search-listing-result > div > div > div.search-results__count > div.d-flex.align-items-end.search-results__status > div.flex-fill > h1').text();
-  // const nbPages=parseInt(NbOfItemsInfo.split('sur')[1].substring(1,4),10); //the split returns " XXX page" so we have to do a substring
-  // return nbPages;
-  return NbOfItemsInfo;
-};
+
+  const totalRestaurants = $("body > main > section.section-main.search-results.search-listing-result > div > div > div.search-results__count > div.d-flex.align-items-end.search-results__status > div.flex-fill > h1")
+      .text()
+      .trim()
+      .split(" ");
+  const nbPages = Math.ceil(Number(totalRestaurants[totalRestaurants.length - 2]) / 20);
+
+  return nbPages
+
+}
 
 
 /**
  * Get all Urls of restaurants
+ * @param  {String}  url
  * @return {Array} restaurantsUrls
  */
 module.exports.fetchRestaurantsUrls = async (nbPages) => {
