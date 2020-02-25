@@ -14,23 +14,27 @@ const fs = require('fs');
 async function sandbox() {
   try {
 
-  
+    //Fetching from Maitres
     console.log('🕵️‍♀️  browsing https://www.maitresrestaurateurs.fr');
     const restaurants2 = await maitres.get();
     const json2 = await JSON.stringify(restaurants2, null, 2);
-    fs.writeFileSync('server/MaitreRestaurateur.json', json2);
+    fs.writeFileSync('./MaitreRestaurateur.json', json2);
 
 
-    
+    //Fetching from Michelin
     console.log('🕵️‍♀️  browsing https://guide.michelin.com/fr');
-    const nbPages = michelin.getNbPages('https://guide.michelin.com/fr/fr/restaurants/bib-gourmand/');
-    const links = michelin.fetchRestaurantsUrls(nbPages);
-    let restaurants = []
-    
-    for (let i = 0; i < links.length; i += size) {
-      arrayOfArrays.push(links.slice(i, i + size));
+    const nbPages = await michelin.getNbPages("https://guide.michelin.com/fr/fr/restaurants/bib-gourmand")
+    const restaurantsUrls = await michelin.fetchRestaurantsUrls(1); 
+    let restaurants = [];
+    for (url of restaurantsUrls){
+      await michelin.scrapeRestaurant(url, restaurants); 
     }
+    const json = await JSON.stringify(restaurants, null, 2);
+    fs.writeFileSync('./MichelinBib.json', json);
+
+    console.log('done');
     process.exit(0);
+
 
   } catch (e) {
     console.error(e);

@@ -178,5 +178,185 @@
     "type": "Cuisine : Cuisinemoderne",
     "experience": "Assez confortable",
     "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "La Table d'Arthur R",
+    "address": "9 rue Pierre Bérégovoy, Charleville-Mézières, 08000, France",
+    "phone": "+33324570564",
+    "price": "31-51EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": "Assez confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "Les Jardins de l'Acropolis",
+    "address": "rue d'Athènes, à Bourran, Rodez, 12000, France",
+    "phone": "+33565684007",
+    "price": "26-60EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": " Confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "Lougolin",
+    "address": "381 route de Plascassier, Grasse, 06130, France",
+    "phone": "+33493601444",
+    "price": "28-33EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": "Assez confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "L'Oxygène",
+    "address": "La Charmette, Valmorel, 73260, France",
+    "phone": "+33479098180",
+    "price": "32-69EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": " Confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "SOlange",
+    "address": "59 rue d'Isly, Lille, 59000, France",
+    "phone": "+33986372250",
+    "price": "25-29EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": "Assez confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "Le Beauvoir",
+    "address": "1 avenue Marx-Dormoy, Bourges, 18000, France",
+    "phone": "+33248654244",
+    "price": "18-60EUR",
+    "type": "Cuisine : Cuisinetraditionnelle",
+    "experience": "Très confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "B2K6",
+    "address": "6 rue du Caire, Lempdes, 63370, France",
+    "phone": "+33473617471",
+    "price": "22-66EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": "Assez confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "L'Ormeau",
+    "address": "4 quai Thomas, Cancale, 35260, France",
+    "phone": "+33299896016",
+    "price": "32-80EUR",
+    "type": "Cuisine : Poissonsetfruitsdemer",
+    "experience": " Confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "Téjérina-Hôtel de la Place",
+    "address": "51 Place de la Mairie, Polliat, 01310, France",
+    "phone": "+33474304019",
+    "price": "24-73EUR",
+    "type": "Cuisine : Cuisinetraditionnelle",
+    "experience": " Confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "Aux Plumes",
+    "address": "45 rue Boulard, Paris, 75014, France",
+    "phone": "+33153907622",
+    "price": "32-60EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": "Assez confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "DZ'envies",
+    "address": "12 rue Odebert, Dijon, 21000, France",
+    "phone": "+33380500926",
+    "price": "21-54EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": "Assez confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "Le 11 Bistrot Gourmand",
+    "address": "11 rue de Verdun, Pontchâteau, 44160, France",
+    "phone": "+33240422328",
+    "price": "26-33EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": "Assez confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "Le Petit Paris",
+    "address": "au bourg, Daglan, 24250, France",
+    "phone": "+33553284110",
+    "price": "32-41EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": " Confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "Le Bistro des Glycines",
+    "address": "4 avenue de Laugerie, Les Eyzies-de-Tayac, 24620, France",
+    "phone": "+33553069707",
+    "price": "19-45EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": "Assez confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "La Table 101",
+    "address": "101 rue Moncey, Lyon, 69003, France",
+    "phone": "+33478609023",
+    "price": "27-55EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": "Assez confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "L'Îlot Vert",
+    "address": "34-36 rue de Lille, Boulogne-sur-Mer, 62200, France",
+    "phone": "+33321920162",
+    "price": "26-68EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": "Assez confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "Côté Toqués",
+    "address": "21 rue Hoche, Néris-les-Bains, 03310, France",
+    "phone": "+33470030697",
+    "price": "22-46EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": "Assez confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "Côté Mer",
+    "address": "4 rue Ernest-Lamort, Cancale, 35260, France",
+    "phone": "+33299896608",
+    "price": "30-90EUR",
+    "type": "Cuisine : Cuisinetraditionnelle",
+    "experience": "de charme.",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "L'Auberge du Pont des Pierres",
+    "address": "754 rue Paul-de-Vanssay, Montanges, 01200, France",
+    "phone": "+33450563635",
+    "price": "34-41EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": "Assez confortable",
+    "distinction": "Bib Gourmand"
+  },
+  {
+    "name": "Briket' Bistrot",
+    "address": "rue de L'Église, Guéthary, 64210, France",
+    "phone": "+33559265134",
+    "price": "32-50EUR",
+    "type": "Cuisine : Cuisinemoderne",
+    "experience": "Assez confortable",
+    "distinction": "Bib Gourmand"
   }
 ]
