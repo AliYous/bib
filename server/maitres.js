@@ -100,16 +100,16 @@ const parse = async (link, restaurants) => {
 
   if (status >= 200 && status < 300) {
     const $ = cheerio.load(data);
-    const nom = $('#module_ep > div.ep-container.container > div > div > div.ep-content-left.col-md-8 > div > div.ep-section.ep-section-parcours.row > div > div > div.section-item-right.text.flex-5 > span:nth-child(1) > strong').text();
-    const adresse = $('#adresse_pro_1_map').text().trim().replace(/\s+\n+/g, '') + ' France';
-    let telephone;
+    const name = $('#module_ep > div.ep-container.container > div > div > div.ep-content-left.col-md-8 > div > div.ep-section.ep-section-parcours.row > div > div > div.section-item-right.text.flex-5 > span:nth-child(1) > strong').text();
+    const address = $('#address_pro_1_map').text().trim().replace(/\s+\n+/g, '') + ' France';
+    let phone;
     if ($('#module_ep > div.ep-container.container > div > div > div.ep-content-left.col-md-8 > div > div.ep-section.ep-section-parcours.row > div > div > div.section-item-right.text.flex-5').text().replace(/\s/, '').match(/(?:\+33\s|0)[1-9](?:\s\d{2}){4}/g) !== null)
-      telephone = $('#module_ep > div.ep-container.container > div > div > div.ep-content-left.col-md-8 > div > div.ep-section.ep-section-parcours.row > div > div > div.section-item-right.text.flex-5').text().replace(/\s/, '').match(/(?:\+33\s|0)[1-9](?:\s\d{2}){4}/g)[0];
-    else telephone = 'Non renseigné';
+      phone = $('#module_ep > div.ep-container.container > div > div > div.ep-content-left.col-md-8 > div > div.ep-section.ep-section-parcours.row > div > div > div.section-item-right.text.flex-5').text().replace(/\s/, '').match(/(?:\+33\s|0)[1-9](?:\s\d{2}){4}/g)[0];
+    else phone = 'Non renseigné';
     const restaurant = {
-      nom: nom,
-      adresse: adresse,
-      telephone: telephone
+      name: name,
+      address: address,
+      phone: phone
     };
     restaurants.push(restaurant);
   }

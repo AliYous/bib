@@ -2,11 +2,9 @@
 
 
 
-// ------------------------------------- 
-//   ONLY FOR TESTING. RUN app.js for full project
-// ----------------------------------
 const michelin = require('./michelin');
 const maitres = require('./maitres');
+const commonBib = require('./commonBib');
 
 const axios = require('axios');
 const fs = require('fs');
@@ -22,17 +20,22 @@ async function sandbox() {
 
 
     //Fetching from Michelin
-    console.log('🕵️‍♀️  browsing https://guide.michelin.com/fr');
-    const nbPages = await michelin.getNbPages("https://guide.michelin.com/fr/fr/restaurants/bib-gourmand")
-    const restaurantsUrls = await michelin.fetchRestaurantsUrls(nbPages); 
-    let restaurants = [];
-    for (url of restaurantsUrls){
-      await michelin.scrapeRestaurant(url, restaurants); 
-    }
-    const json = await JSON.stringify(restaurants, null, 2);
-    fs.writeFileSync('./MichelinBib.json', json);
+    // console.log('🕵️‍♀️  browsing https://guide.michelin.com/fr');
+    // const nbPages = await michelin.getNbPages("https://guide.michelin.com/fr/fr/restaurants/bib-gourmand")
+    // const restaurantsUrls = await michelin.fetchRestaurantsUrls(nbPages); 
+    // let restaurants = [];
+    // for (url of restaurantsUrls){
+    //   await michelin.scrapeRestaurant(url, restaurants); 
+    // }
+    // const json = await JSON.stringify(restaurants, null, 2);
+    // fs.writeFileSync('./MichelinBib.json', json);
+    // console.log('done');
 
-    console.log('done');
+    console.log('Looking for the restaurants that are common to both websites ...');
+    const bibList = await commonBib.findBib(); 
+    const json3 = await JSON.stringify(bibList, null, 2);
+    fs.writeFileSync('./commonBib.json', json3);
+
     process.exit(0);
 
 
